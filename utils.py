@@ -54,10 +54,11 @@ def add_included_letters(letters_list, included_letters):
             included_letters.append(elem[0])
     return list(dict.fromkeys(included_letters))
 
-def add_excluded_letters(letters_list, excluded_letters):
+def add_excluded_letters(letters_list, excluded_letters, included_letters):
     for elem in letters_list:
         if elem[1] == "non-trouve resultat":
-            excluded_letters.append(elem[0])
+            if elem[0] not in included_letters:
+                excluded_letters.append(elem[0])
     return list(dict.fromkeys(excluded_letters))
 
 def letters_list_to_url_block(letters_list, included_letters_list, excluded_letters_list):

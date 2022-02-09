@@ -84,8 +84,8 @@ for number_of_games in range(6):
 
     prev_row = ut.nth_row_letters(sutom_driver, number_of_games)
 
-    incldued_letters = ut.add_included_letters(prev_row, included_letters)
-    excluded_letters = ut.add_excluded_letters(prev_row, excluded_letters)
+    included_letters = ut.add_included_letters(prev_row, included_letters)
+    excluded_letters = ut.add_excluded_letters(prev_row, excluded_letters, included_letters)
 
     finished = ut.finished_test(prev_row)
 
